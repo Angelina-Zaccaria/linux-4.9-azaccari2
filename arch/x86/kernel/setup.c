@@ -885,6 +885,7 @@ void __init setup_arch(char **cmdline_p)
 	__flush_tlb_all();
 #else
 	printk(KERN_INFO "Command line: %s\n", boot_command_line);
+	printk("Hello World from Angelina Zaccaria (10419577)");
 #endif
 
 	/*
