@@ -1,0 +1,18 @@
+#include <linux/compiler.h>
+#include <linux/linkage.h>
+#include <linux/signal.h>
+#include <linux/types.h>
+#include <linux/sched.h>
+#include <linux/kernel.h>
+
+SYSCALL_DEFINE2(my_syscall2, int, num1, int, num2) {
+	int sum = num1 + num2;
+	printk(KERN_INFO "Process id of the calling process is %i. The sum of %d and %d is %d", current->pid, num1, num2, sum);
+	return sum;
+}
+
+//takes pointer to char array containing a string terminated by 0
+//returns a signed int
+//if string size >128 bytes, return -1
+//else, replace all occurrences of letter o w num 0
+
